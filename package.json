@@ -35,7 +35,7 @@
   },
   "homepage": "https://github.com/richardcyrus/google-books-search#readme",
   "lint-staged": {
-    "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
+    "**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
       "prettier --single-quote --write",
       "git add"
     ]
