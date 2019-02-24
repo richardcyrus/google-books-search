@@ -3,6 +3,7 @@
     ".git",
     ".idea",
     ".vscode",
+    "build",
     "client",
     "node_modules/**/node_modules"
   ],

@@ -1,2 +1,5 @@
 .eslintrc.js
+.idea
+.vscode
 client
+build
