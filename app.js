@@ -12,10 +12,9 @@ const helmet = require('helmet');
 const cors = require('cors');
 const mongoose = require('mongoose');
 
-const apiRouter = require('./routes/api');
+const routes = require('./routes');
 
 const app = express();
-app.use(logger('dev'));
 
 // Set native promises as mongoose promise
 mongoose.Promise = global.Promise;
@@ -29,26 +28,27 @@ mongoose.connect(process.env.MONGODB_URI, {
 // Get the connection
 const db = mongoose.connection;
 
-// Bind connection to error event (to get notification of connection errors)
+// Bind to connection error event (to get notification of errors)
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
+app.use(logger('dev'));
 app.use(helmet());
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser(process.env.SESSION_SECRET));
 
-// Put all API endpoints under '/api'
-app.use('/api', apiRouter);
+// Add routes, both API and view
+app.use(routes);
 
-// Serve static files from the React app
+// Serve static files from the React app in production.
 if (process.env.NODE_ENV === 'production') {
-  app.use(express.static(path.join(__dirname, 'client/build')));
+  app.use(express.static(path.join(__dirname, 'client', 'build')));
 
-  // The "catchall" handler: for any request that doesn't match one above,
-  // send back React's index.html file.
+  // The "catchall" handler: for any request that doesn't match an api
+  // route, send back the React index.html file.
   app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
+    res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'));
   });
 }
 
