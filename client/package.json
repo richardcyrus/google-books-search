@@ -7,6 +7,7 @@
     "@fortawesome/free-brands-svg-icons": "^5.7.2",
     "@fortawesome/free-solid-svg-icons": "^5.7.2",
     "@fortawesome/react-fontawesome": "^0.1.4",
+    "axios": "^0.18.0",
     "bootstrap": "^4.3.1",
     "node-sass": "^4.11.0",
     "react": "^16.8.2",
@@ -15,13 +16,13 @@
     "react-router-dom": "^4.3.1",
     "react-scripts": "2.1.5"
   },
+  "proxy": "http://localhost:3001/",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-  "proxy": "http://localhost:3001/",
   "eslintConfig": {
     "extends": "react-app"
   },
