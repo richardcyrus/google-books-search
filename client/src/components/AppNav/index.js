@@ -3,6 +3,12 @@ import { Link, NavLink } from 'react-router-dom';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 
+/**
+ * The default Navigation Bar for all pages in this application.
+ * Uses react-router-dom `NavLink` elements for the different views,
+ * and a react-router-dom `Link` element for the Brand in the
+ * Navigation Bar.
+ */
 function AppNav() {
   return (
     <React.Fragment>
