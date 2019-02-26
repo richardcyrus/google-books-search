@@ -1,0 +1,27 @@
+.book {
+    &__title,
+    &__subtitle {
+        font-style: italic;
+    }
+}
+
+.book-list {
+    &__header {
+        justify-content: space-between;
+    }
+
+    &__btn-container {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    &__authors {
+        font-size: 80%;
+        font-style: italic;
+        font-weight: 400;
+    }
+
+    &__description {
+        font-size: 0.9rem;
+    }
+}

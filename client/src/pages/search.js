@@ -112,7 +112,7 @@ class SearchPage extends React.Component {
           </Col>
           <Col md={12}>
             <Card className="mt-4 shadow">
-              <Card.Header className="border-bottom-0">
+              <Card.Header className="border-bottom-0 bg-primary text-white">
                 <h3>
                   <strong>
                     <FontAwesomeIcon icon="book" /> Book Search
@@ -127,16 +127,19 @@ class SearchPage extends React.Component {
                 >
                   <Form.Group controlId="query">
                     <Form.Label>
-                      <strong>Book</strong>
+                      <strong>Search</strong>
                     </Form.Label>
                     <Form.Control
                       type="text"
-                      placeholder="Airframe"
+                      placeholder="Enter a search term (Book or Writer)"
                       name="query"
                       required
                       onChange={this.handleInputChange}
                       value={this.state.query}
                     />
+                    <Form.Control.Feedback type="invalid">
+                      Please provide a valid search phrase.
+                    </Form.Control.Feedback>
                   </Form.Group>
                   <div className="d-flex justify-content-end">
                     <Button
@@ -156,7 +159,7 @@ class SearchPage extends React.Component {
         <Row>
           <Col md={12}>
             <Card className="mt-4 shadow">
-              <Card.Header className="border-bottom-0">
+              <Card.Header className="border-bottom-0 bg-primary text-white">
                 <h3>
                   <strong>
                     <FontAwesomeIcon icon="list-alt" /> Results

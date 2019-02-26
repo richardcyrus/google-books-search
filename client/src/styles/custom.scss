@@ -1,12 +1,53 @@
 // Override default variables before import
 
+// Import Bootswatch theme overrides.
+@import '~bootswatch/dist/materia/variables';
 // Import Bootstrap and its default variables
 @import '~bootstrap/scss/bootstrap.scss';
+// Import Bootswatch theme.
+@import '~bootswatch/dist/materia/bootswatch';
+
+// Custom Styles
+@import 'book-list';
+
+body {
+    background-image: url(../assets/paper.png);
+}
 
 .jumbotron {
-    padding: 6.25rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    height: 17.875rem;
+    padding: 0;
+    position: relative;
+
+    .background-image {
+        background-image: url(../assets/jonathan-brinkhorst-678155-unsplash.jpg);
+        background-position: 50%;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 100%;
+    }
+
+    .overlay {
+        background: rgba(0, 0, 0, 0.5);
+        bottom: 0;
+        left: 0;
+        position: absolute;
+        right: 0;
+        top: 0;
+        z-index: auto;
+    }
+
+    .heading-content {
+        color: #fff;
+        position: absolute;
+        text-align: center;
+        top: 6.25rem;
+        width: 100%;
+    }
 }
 
 .btn {
+    font-variant: small-caps;
     text-transform: uppercase;
 }

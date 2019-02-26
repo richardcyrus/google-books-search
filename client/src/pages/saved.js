@@ -73,7 +73,7 @@ class SavedPage extends React.Component {
         <Row>
           <Col md={12}>
             <Card className="mt-4 shadow">
-              <Card.Header className="border-bottom-0">
+              <Card.Header className="border-bottom-0 bg-primary text-white">
                 <h3>
                   <strong>
                     <FontAwesomeIcon icon="download" /> Saved Books

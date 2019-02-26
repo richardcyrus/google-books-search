@@ -12,7 +12,7 @@ import Nav from 'react-bootstrap/Nav';
 function AppNav() {
   return (
     <React.Fragment>
-      <Navbar className="mb-2 p-3" bg="light" variant="light" expand="lg">
+      <Navbar className="mb-2 p-3" bg="primary" variant="dark" expand="sm">
         <Link className="navbar-brand" to="/">
           Google Books
         </Link>
