@@ -5,6 +5,7 @@
  * (c) 2019 Richard Cyrus <hello@rcyrus.com>
  */
 const db = require('../models');
+// const debug = require('debug')('google-books-search:booksController');
 
 module.exports = {
   findAll: function(req, res) {
@@ -18,6 +19,7 @@ module.exports = {
       .catch((error) => res.status(422).json(error));
   },
   create: function(req, res) {
+    // debug('::Create::BODY::', req.body);
     db.Book.create(req.body)
       .then((result) => res.json(result))
       .catch((error) => res.status(422).json(error));

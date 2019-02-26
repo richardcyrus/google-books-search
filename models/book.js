@@ -7,6 +7,21 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
+/**
+ * Return undefined for a value that is null or an empty string.
+ * This prevents mongoose from sending an empty string property to the
+ * database.
+ *
+ * @param {*} v The value to test.
+ */
+function removeEmpty(v) {
+  if (v == null || v === '') {
+    return undefined;
+  }
+
+  return v;
+}
+
 const bookSchema = new Schema({
   title: {
     type: String,
@@ -14,6 +29,7 @@ const bookSchema = new Schema({
   },
   subtitle: {
     type: String,
+    set: removeEmpty,
   },
   authors: {
     type: [String],
@@ -22,10 +38,12 @@ const bookSchema = new Schema({
   description: {
     type: String,
     required: true,
+    trim: true,
   },
   image: {
     type: String,
     required: true,
+    trim: true,
   },
   link: {
     type: String,
