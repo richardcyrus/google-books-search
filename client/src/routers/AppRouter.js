@@ -1,9 +1,10 @@
 import React from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import AppNav from '../components/AppNav';
 import AppFooter from '../components/AppFooter';
 import SearchPage from '../pages/search';
 import SavedPage from '../pages/saved';
+import NotFound from '../pages/NotFound';
 
 /**
  * Manage the registration of react-router-dom routes for the entire
@@ -16,8 +17,11 @@ function AppRouter() {
     <Router>
       <React.Fragment>
         <AppNav />
-        <Route exact path="/" component={SearchPage} />
-        <Route exact path="/saved" component={SavedPage} />
+        <Switch>
+          <Route exact path="/" component={SearchPage} />
+          <Route exact path="/saved" component={SavedPage} />
+          <Route component={NotFound} />
+        </Switch>
         <AppFooter />
       </React.Fragment>
     </Router>

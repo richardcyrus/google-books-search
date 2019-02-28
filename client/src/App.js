@@ -4,11 +4,12 @@ import { faReact } from '@fortawesome/free-brands-svg-icons';
 import {
   faBook,
   faListAlt,
-  faDownload
+  faDownload,
+  faBookDead
 } from '@fortawesome/free-solid-svg-icons';
 import AppRouter from './routers/AppRouter';
 
-library.add(faReact, faBook, faListAlt, faDownload);
+library.add(faReact, faBook, faListAlt, faDownload, faBookDead);
 
 class App extends Component {
   render() {
