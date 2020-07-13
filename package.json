@@ -31,7 +31,7 @@
     "url": "https://github.com/richardcyrus/google-books-search/issues"
   },
   "engines": {
-    "node": "11.7.0"
+    "node": "^10.21.0"
   },
   "homepage": "https://github.com/richardcyrus/google-books-search#readme",
   "lint-staged": {
@@ -46,16 +46,16 @@
     }
   },
   "dependencies": {
-    "axios": "^0.18.0",
-    "cookie-parser": "1.4.4",
-    "cors": "2.8.5",
-    "debug": "4.1.1",
-    "dotenv": "6.2.0",
-    "express": "4.16.4",
-    "helmet": "3.15.1",
+    "axios": "^0.19.2",
+    "cookie-parser": "^1.4.5",
+    "cors": "^2.8.5",
+    "debug": "^4.1.1",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "helmet": "^3.23.3",
     "if-env": "^1.0.4",
-    "mongoose": "5.4.14",
-    "morgan": "1.9.1"
+    "mongoose": "^5.9.23",
+    "morgan": "^1.10.0"
   },
   "devDependencies": {
     "concurrently": "^4.1.0",
