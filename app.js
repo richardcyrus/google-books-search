@@ -18,13 +18,13 @@ const app = express();
 
 // Set native promises as mongoose promise
 mongoose.Promise = global.Promise;
+mongoose.set('strictQuery', false);
+
 // Set up mongoose connection
-mongoose.connect(process.env.MONGODB_URI, {
-  useNewUrlParser: true,
-  useCreateIndex: true,
-  useFindAndModify: false,
-  useUnifiedTopology: true,
-});
+main().catch((err) => console.log(err));
+async function main() {
+  await mongoose.connect(process.env.MONGODB_URI);
+}
 
 // Get the connection
 const db = mongoose.connection;

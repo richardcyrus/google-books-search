@@ -10,6 +10,7 @@ const ajax = axios.create({
   }
 });
 
+/* eslint import/no-anonymous-default-export: [2, {"allowObject": true}] */
 export default {
   // Search Google Books API.
   searchBooks: function(query) {
