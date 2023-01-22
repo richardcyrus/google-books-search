@@ -43,7 +43,7 @@ function BookList(props) {
                   <Button
                     onClick={() => props.handleBookAction(book)}
                     variant="primary"
-                    className="ml-2 shadow"
+                    className="ms-2 shadow"
                   >
                     Save
                   </Button>
@@ -52,7 +52,7 @@ function BookList(props) {
                   <Button
                     onClick={() => props.handleBookAction(book._id)}
                     variant="danger"
-                    className="ml-2 shadow"
+                    className="ms-2 shadow"
                   >
                     Delete
                   </Button>

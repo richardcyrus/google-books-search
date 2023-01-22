@@ -1,15 +1,15 @@
 {
   "name": "google-books-search",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "private": true,
   "scripts": {
-    "start": "if-env NODE_ENV=production && yarn run start:prod || yarn run start:dev",
-    "start:prod": "node ./bin/www",
-    "start:dev": "concurrently \"DEBUG=google-books-search:* nodemon ./bin/www\" \"yarn run client\"",
+    "start": "per-env",
+    "start:development": "concurrently \"DEBUG=google-book-search:* nodemon ./bin/www\" \"yarn run client\"",
+    "start:production": "node ./bin/www",
     "client": "cd client && yarn start",
     "install": "cd client && yarn install",
     "build": "cd client && yarn build",
-    "heroku-postbuild": "cd client && yarn --production=false && yarn build"
+    "prepare": "husky install"
   },
   "repository": {
     "type": "git",
@@ -31,43 +31,36 @@
     "url": "https://github.com/richardcyrus/google-books-search/issues"
   },
   "engines": {
-    "node": "^10.21.0"
+    "node": "18"
   },
   "homepage": "https://github.com/richardcyrus/google-books-search#readme",
-  "lint-staged": {
-    "**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
-      "prettier --single-quote --write",
-      "git add"
-    ]
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
+  "volta": {
+    "node": "18.13.0"
   },
   "dependencies": {
-    "axios": "^0.19.2",
-    "cookie-parser": "^1.4.5",
+    "axios": "^1.2.3",
+    "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",
-    "debug": "^4.1.1",
-    "dotenv": "^8.2.0",
-    "express": "^4.17.1",
-    "helmet": "^3.23.3",
-    "if-env": "^1.0.4",
-    "mongoose": "^5.9.23",
-    "morgan": "^1.10.0"
+    "debug": "^4.3.4",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "helmet": "^6.0.1",
+    "mongoose": "^6.8.4",
+    "morgan": "^1.10.0",
+    "per-env": "^1.0.2"
   },
   "devDependencies": {
-    "concurrently": "^4.1.0",
-    "eslint": "^5.14.1",
-    "eslint-config-prettier": "^4.0.0",
-    "eslint-plugin-import": "^2.16.0",
-    "eslint-plugin-node": "^8.0.1",
-    "eslint-plugin-prettier": "^3.0.1",
-    "eslint-plugin-promise": "^4.0.1",
-    "husky": "^1.3.1",
-    "lint-staged": "^8.1.4",
-    "nodemon": "^1.18.10",
-    "prettier": "^1.16.4"
+    "concurrently": "^7.6.0",
+    "eslint": "^8.32.0",
+    "eslint-config-prettier": "^8.6.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-promise": "^6.1.1",
+    "husky": "^8.0.0",
+    "lint-staged": "^13.1.0",
+    "micromatch": "^4.0.5",
+    "nodemon": "^2.0.20",
+    "prettier": "^2.8.3"
   }
 }

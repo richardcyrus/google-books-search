@@ -18,15 +18,18 @@ function AppNav() {
         </Link>
         <Navbar.Toggle aria-controls="books-navbar-nav" />
         <Navbar.Collapse id="books-navbar-nav">
-          <Nav className="mr-auto">
-            <NavLink exact to="/" activeClassName="active" className="nav-link">
+          <Nav className="ms-auto">
+            <NavLink end to="/" className={
+              ({ isActive }) => 'nav-link' + (isActive ? " active" : "")
+            }>
               Search
             </NavLink>
             <NavLink
-              exact
+              end
               to="/saved"
-              activeClassName="active"
-              className="nav-link"
+              className={
+                ({ isActive }) => 'nav-link' + (isActive ? " active" : "")
+              }
             >
               Saved
             </NavLink>

@@ -1,5 +1,4 @@
 import React from 'react';
-import Jumbotron from 'react-bootstrap/Jumbotron';
 
 /**
  * Render's the page header Jumbotron.
@@ -10,7 +9,7 @@ import Jumbotron from 'react-bootstrap/Jumbotron';
  */
 function Header(props) {
   return (
-    <Jumbotron className="mt-4">
+    <div className="jumbotron mt-4">
       <div className="background-image" />
       <div className="overlay" />
       <div className="heading-content">
@@ -19,7 +18,7 @@ function Header(props) {
         </h1>
         <h2 className="text-center">{props.pageTag}</h2>
       </div>
-    </Jumbotron>
+    </div>
   );
 }
 

@@ -7,8 +7,17 @@
 
 module.exports = {
   arrowParens: 'always',
-  trailingComma: 'es5',
-  tabWidth: 2,
+  embeddedLanguageFormatting: 'auto',
+  htmlWhitespaceSensitivity: 'css',
+  insertPragma: false,
+  bracketSameLine: false,
+  jsxSingleQuote: false,
+  proseWrap: 'preserve',
+  quoteProps: 'as-needed',
+  requirePragma: false,
   semi: true,
   singleQuote: true,
+  tabWidth: 2,
+  trailingComma: 'es5',
+  useTabs: false,
 };

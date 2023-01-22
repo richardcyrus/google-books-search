@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import AppNav from '../components/AppNav';
 import AppFooter from '../components/AppFooter';
 import SearchPage from '../pages/search';
@@ -17,11 +17,11 @@ function AppRouter() {
     <Router>
       <React.Fragment>
         <AppNav />
-        <Switch>
-          <Route exact path="/" component={SearchPage} />
-          <Route exact path="/saved" component={SavedPage} />
-          <Route component={NotFound} />
-        </Switch>
+        <Routes>
+          <Route path="/" element={<SearchPage />} />
+          <Route path="/saved" element={<SavedPage />} />
+          <Route element={<NotFound />} />
+        </Routes>
         <AppFooter />
       </React.Fragment>
     </Router>

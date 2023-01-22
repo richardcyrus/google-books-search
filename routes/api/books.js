@@ -9,10 +9,7 @@ const router = express.Router();
 const booksController = require('../../controllers/books');
 
 // Matches "/api/books"
-router
-  .route('/')
-  .get(booksController.findAll)
-  .post(booksController.create);
+router.route('/').get(booksController.findAll).post(booksController.create);
 
 // Matches "/api/books/:id"
 router
